@@ -1,0 +1,395 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #f5f5f5;
+  background: #101010;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #101010;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background: #101010;
+  color: #f5f5f5;
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.header {
+  width: 100%;
+  min-height: 75px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #252525;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo-icon {
+  color: #ffd21f;
+  font-size: 27px;
+}
+
+.header-label {
+  color: #777;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* MAIN */
+
+.main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 65px 30px 45px;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.eyebrow {
+  color: #ffd21f;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 6vw, 65px);
+  font-weight: 700;
+  letter-spacing: -3px;
+  line-height: 1.1;
+}
+
+.hero h1 span {
+  color: #ffd21f;
+}
+
+.hero-description {
+  max-width: 500px;
+  margin: 18px auto 0;
+  color: #999;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* CAMERA */
+
+.camera-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  min-height: 280px;
+  max-height: 510px;
+  overflow: hidden;
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 12px;
+}
+
+.camera-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #181818;
+}
+
+.camera-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #181818;
+  padding: 20px;
+}
+
+.placeholder-icon {
+  font-size: 45px;
+  color: #ffd21f;
+  margin-bottom: 15px;
+}
+
+.camera-placeholder h2 {
+  color: #f5f5f5;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.camera-placeholder p {
+  color: #999;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* STATUS */
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 20px;
+  color: #aaa;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #777;
+}
+
+.status-dot.active {
+  background: #39d98a;
+  box-shadow: 0 0 10px #39d98a80;
+}
+
+.error-message {
+  margin-top: 12px;
+  color: #ff6868;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* BUTTONS */
+
+.controls {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.controls button {
+  min-width: 155px;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primary-button {
+  color: #101010;
+  background: #ffd21f;
+  border: 1px solid #ffd21f;
+}
+
+.primary-button:hover:not(:disabled) {
+  background: #ffe16b;
+  border-color: #ffe16b;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  color: #f5f5f5;
+  background: #222;
+  border: 1px solid #444;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: #303030;
+  border-color: #ffd21f;
+  transform: translateY(-2px);
+}
+
+.controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* INSTRUCTIONS */
+
+.instructions {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 65px;
+}
+
+.instruction-card {
+  padding: 25px;
+  background: #181818;
+  border: 1px solid #292929;
+  border-radius: 9px;
+  transition: 0.2s ease;
+}
+
+.instruction-card:hover {
+  border-color: #ffd21f;
+  transform: translateY(-3px);
+}
+
+.step-number {
+  display: inline-block;
+  color: #ffd21f;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+.instruction-card h3 {
+  color: #f5f5f5;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.instruction-card p {
+  color: #888;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.gesture-note {
+  margin-top: 35px;
+  text-align: center;
+  color: #888;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  padding: 25px 15px;
+  text-align: center;
+  border-top: 1px solid #252525;
+  color: #666;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    min-height: 65px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .header-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .main {
+    padding: 45px 18px 35px;
+  }
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .camera-container {
+    min-height: 230px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .controls {
+    gap: 10px;
+  }
+
+  .controls button {
+    flex: 1 1 42%;
+    min-width: 0;
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .instructions {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 45px;
+  }
+
+  .instruction-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header-label {
+    display: none;
+  }
+
+  .camera-container {
+    min-height: 200px;
+  }
+
+  .controls button {
+    flex-basis: 100%;
+  }
+}
